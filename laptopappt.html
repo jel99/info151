@@ -11,20 +11,26 @@
 
     <a href="home.html">Go back to home page</a>
 
+    <!-- This form will allow users to sign up for a laptop repair appointment. -->
     <form name="laptopApptForm">
 
       <h1 style="text-align: center;">Please sign up for an appointment to get a laptop repaired</h1>
       <center><img src="images/laptop.png" alt="Laptop" height="125"></center>
 
-      <h2>Step 1: Enter your name, e-mail, and phone number.</h2>
-        First Name:&nbsp<input type="text" name="customerFName" value="" size="25">&nbsp&nbsp
-        Last Name:&nbsp<input type="text" name="customerLName" value="" size="25"><br><br>
-        Email:&nbsp<input type="text" name="customerEmail" value="" size="25">&nbsp&nbsp
-        Phone Number:&nbsp<input type="text" name="customerPhone" value="" size="25">
+      <!-- This will allow users to select enter their name, email, and phone number to be saved by the form. -->
+      <h2>Enter your name, address, e-mail, and phone number.</h2>
+        First Name:&nbsp;;<input type="text" name="customerFName" value="" size="25">&nbsp;&nbsp;
+        Last Name:&nbsp;<input type="text" name="customerLName" value="" size="25"><br><br>
+        Email:&nbsp;<input type="text" name="customerEmail" value="" size="25">&nbsp;&nbsp;
+        Phone Number:&nbsp;<input type="text" name="customerPhone" value="" size="25">
+
+        
 
       <br><br>
-      <h2>Step 2: Choose a month, date, and time for your appointment.</h2>
-        Month:&nbsp <select name="month">
+
+      <!-- This will allow users to select a day, month, and time to make an appointment. -->
+      <h2>Choose a month, date, and time for your appointment.</h2>
+        Month:&nbsp; <select name="month">
           <option value="Jan">January</option>
           <option value="Feb">February</option>
           <option value="Mar">March</option>
@@ -37,9 +43,9 @@
           <option value="Oct">October</option>
           <option value="Nov">November</option>
           <option value="Dec">December</option>
-        </select>&nbsp&nbsp&nbsp&nbsp
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;
 
-        Day:&nbsp <select name="day">
+        Day:&nbsp; <select name="day">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -70,9 +76,9 @@
           <option value="28">28</option>
           <option value="29">29</option>
           <option value="30">30</option>
-        </select>&nbsp&nbsp&nbsp&nbsp
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;
 
-        Time:&nbsp <select name="time">
+        Time:&nbsp; <select name="time">
           <option value="1pm">1:00pm</option>
           <option value="2pm">2:00pm</option>
           <option value="3pm">3:00pm</option>
@@ -81,8 +87,9 @@
           <option value="6pm">6:00pm</option>
         </select>
 
-        <br><br>
-        <h2>Step 3:</h2>
+        <br><br><br><br>
+
+        <!-- This submit the form to the server once we have a script enabled. -->
         <input type="button" name="scheduleButton" value="Schedule It" onClick="doSubmit()" >
 
     </form>
