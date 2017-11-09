@@ -17,14 +17,86 @@
       <h1 style="text-align: center;">Please sign up for an appointment to get a laptop repaired</h1>
       <center><img src="images/laptop.png" alt="Laptop" height="125"></center>
 
+      <!-- This is just to find out what customers need help with. -->
+      <p> What model of device do you need help with? &nbsp;&nbsp;
+        <input type="radio" id="heardFrom1" name="heardFrom" value="Dell"
+             tabindex="1" checked = "checked"/>&nbsp; Dell &nbsp;&nbsp;&nbsp;
+        <input type="radio" id="heardFrom2" name="heardFrom" value="Apple"
+             tabindex="-1"/>&nbsp; Apple &nbsp;&nbsp;&nbsp;
+        <input type="radio" id="heardFrom2" name="heardFrom" value="Lenovo"
+             tabindex="-1"/>&nbsp; Lenovo &nbsp;&nbsp;&nbsp;
+        <input type="radio" id="heardFrom2" name="heardFrom" value="Surface"
+             tabindex="-1"/>&nbsp; Surface &nbsp;&nbsp;&nbsp;
+        <input type="radio" id="heardFrom2" name="heardFrom" value="HP"
+             tabindex="-1"/>&nbsp; HP &nbsp;&nbsp;&nbsp;
+        <input type=radio id="heardFrom3" name="heardFrom" value="Other"
+             tabindex="-1" />&nbsp; Other
+      </p>
+
       <!-- This will allow users to select enter their name, email, and phone number to be saved by the form. -->
       <h2>Enter your name, address, e-mail, and phone number.</h2>
-        First Name:&nbsp;;<input type="text" name="customerFName" value="" size="25">&nbsp;&nbsp;
+        First Name:&nbsp;<input type="text" name="customerFName" value="" size="25">&nbsp;&nbsp;
         Last Name:&nbsp;<input type="text" name="customerLName" value="" size="25"><br><br>
+
+        Address:&nbsp;<input type="text" name="address" value="" size="35">&nbsp;&nbsp;
+        City:&nbsp;<input type="text" name="city" value="" size="25">&nbsp;&nbsp;
+        State:&nbsp;
+          <select>
+          	<option value="AL">Alabama</option>
+          	<option value="AK">Alaska</option>
+          	<option value="AZ">Arizona</option>
+          	<option value="AR">Arkansas</option>
+          	<option value="CA">California</option>
+          	<option value="CO">Colorado</option>
+          	<option value="CT">Connecticut</option>
+          	<option value="DE">Delaware</option>
+          	<option value="DC">District Of Columbia</option>
+          	<option value="FL">Florida</option>
+          	<option value="GA">Georgia</option>
+          	<option value="HI">Hawaii</option>
+          	<option value="ID">Idaho</option>
+          	<option value="IL">Illinois</option>
+          	<option value="IN">Indiana</option>
+          	<option value="IA">Iowa</option>
+          	<option value="KS">Kansas</option>
+          	<option value="KY">Kentucky</option>
+          	<option value="LA">Louisiana</option>
+          	<option value="ME">Maine</option>
+          	<option value="MD">Maryland</option>
+          	<option value="MA">Massachusetts</option>
+          	<option value="MI">Michigan</option>
+          	<option value="MN">Minnesota</option>
+          	<option value="MS">Mississippi</option>
+          	<option value="MO">Missouri</option>
+          	<option value="MT">Montana</option>
+          	<option value="NE">Nebraska</option>
+          	<option value="NV">Nevada</option>
+          	<option value="NH">New Hampshire</option>
+          	<option value="NJ">New Jersey</option>
+          	<option value="NM">New Mexico</option>
+          	<option value="NY">New York</option>
+          	<option value="NC">North Carolina</option>
+          	<option value="ND">North Dakota</option>
+          	<option value="OH">Ohio</option>
+          	<option value="OK">Oklahoma</option>
+          	<option value="OR">Oregon</option>
+          	<option value="PA">Pennsylvania</option>
+          	<option value="RI">Rhode Island</option>
+          	<option value="SC">South Carolina</option>
+          	<option value="SD">South Dakota</option>
+          	<option value="TN">Tennessee</option>
+          	<option value="TX">Texas</option>
+          	<option value="UT">Utah</option>
+          	<option value="VT">Vermont</option>
+          	<option value="VA">Virginia</option>
+          	<option value="WA">Washington</option>
+          	<option value="WV">West Virginia</option>
+          	<option value="WI">Wisconsin</option>
+          	<option value="WY">Wyoming</option>
+          </select><br><br>
+
         Email:&nbsp;<input type="text" name="customerEmail" value="" size="25">&nbsp;&nbsp;
         Phone Number:&nbsp;<input type="text" name="customerPhone" value="" size="25">
-
-        
 
       <br><br>
 
@@ -87,7 +159,26 @@
           <option value="6pm">6:00pm</option>
         </select>
 
-        <br><br><br><br>
+        <br><br>
+
+        <h2>Some more info we need</h2>
+
+        <p> How did you hear about us? &nbsp;&nbsp;
+      		<input type="radio" id="heardFrom1" name="heardFrom" value="Search Engine"
+      			   tabindex="1" checked = "checked"/>Search engine
+      		<input type="radio" id="heardFrom2" name="heardFrom" value="Word of Mouth"
+      			   tabindex="-1"/>Word of mouth
+      		<input type=radio id="heardFrom3" name="heardFrom" value="Other"
+      			   tabindex="-1" />Other
+      	</p>
+
+        <p>Would you like to receive announcements about discounts on repairs and other news?</p>
+      	<p>
+      		<input type="checkbox" id="wantsUpdates" name="wantsUpdates" checked value="ON" tabindex="-1" />
+      		<b>YES</b>, I'd like to receive information about discounts on repairs and other news.
+      	</p>
+
+        <br><br><br>
 
         <!-- This submit the form to the server once we have a script enabled. -->
         <input type="button" name="scheduleButton" value="Schedule It" onClick="doSubmit()" >
