@@ -9,6 +9,7 @@
 
   <body>
 
+    <script type="text/javascript" src="validate.js"></script>
     <a href="home.html">Go back to home page</a>
 
     <!-- This form will allow users to sign up for a laptop repair appointment. -->
@@ -19,29 +20,30 @@
 
       <!-- This is just to find out what customers need help with. -->
       <p> What model of device do you need help with? &nbsp;&nbsp;
-        <input type="radio" id="heardFrom1" name="heardFrom" value="Dell"
+        <input type="radio" id="device1" name="deviceHelp" value="Dell"
              tabindex="1" checked = "checked"/>&nbsp; Dell &nbsp;&nbsp;&nbsp;
-        <input type="radio" id="heardFrom2" name="heardFrom" value="Apple"
+        <input type="radio" id="device2" name="deviceHelp" value="Apple"
              tabindex="-1"/>&nbsp; Apple &nbsp;&nbsp;&nbsp;
-        <input type="radio" id="heardFrom2" name="heardFrom" value="Lenovo"
+        <input type="radio" id="device3" name="deviceHelp" value="Lenovo"
              tabindex="-1"/>&nbsp; Lenovo &nbsp;&nbsp;&nbsp;
-        <input type="radio" id="heardFrom2" name="heardFrom" value="Surface"
+        <input type="radio" id="device4" name="deviceHelp" value="Surface"
              tabindex="-1"/>&nbsp; Surface &nbsp;&nbsp;&nbsp;
-        <input type="radio" id="heardFrom2" name="heardFrom" value="HP"
+        <input type="radio" id="device5" name="deviceHelp" value="HP"
              tabindex="-1"/>&nbsp; HP &nbsp;&nbsp;&nbsp;
-        <input type=radio id="heardFrom3" name="heardFrom" value="Other"
+        <input type=radio id="device6" name="deviceHelp" value="Other"
              tabindex="-1" />&nbsp; Other
       </p>
 
       <!-- This will allow users to select enter their name, email, and phone number to be saved by the form. -->
       <h2>Enter your name, address, e-mail, and phone number.</h2>
-        First Name:&nbsp;<input type="text" name="customerFName" value="" size="25">&nbsp;&nbsp;
-        Last Name:&nbsp;<input type="text" name="customerLName" value="" size="25"><br><br>
+        *&nbsp;First Name:&nbsp;<input type="text" name="fname" value="" size="25">&nbsp;&nbsp;
+        *&nbsp;Last Name:&nbsp;<input type="text" name="lname" value="" size="25"><br><br>
 
-        Address:&nbsp;<input type="text" name="address" value="" size="35">&nbsp;&nbsp;
-        City:&nbsp;<input type="text" name="city" value="" size="25">&nbsp;&nbsp;
-        State:&nbsp;
-          <select>
+        *&nbsp;Address:&nbsp;<input type="text" name="address" value="" size="35">&nbsp;&nbsp;
+        *&nbsp;City:&nbsp;<input type="text" name="city" value="" size="25">&nbsp;&nbsp;
+        *&nbsp;State:&nbsp;
+          <select name="state">
+            <option value="select">Select an option</option>
           	<option value="AL">Alabama</option>
           	<option value="AK">Alaska</option>
           	<option value="AZ">Arizona</option>
@@ -95,8 +97,10 @@
           	<option value="WY">Wyoming</option>
           </select><br><br>
 
-        Email:&nbsp;<input type="text" name="customerEmail" value="" size="25">&nbsp;&nbsp;
-        Phone Number:&nbsp;<input type="text" name="customerPhone" value="" size="25">
+        *&nbsp;Email:&nbsp;<input type="text" name="email" value="" size="25">&nbsp;&nbsp;
+        *&nbsp;Phone Number:&nbsp;<input type="text" name="phone" value="" size="25">
+        <br><br>
+        *&nbsp;=&nbsp;Required
 
       <br><br>
 
@@ -165,11 +169,11 @@
 
         <p> How did you hear about us? &nbsp;&nbsp;
       		<input type="radio" id="heardFrom1" name="heardFrom" value="Search Engine"
-      			   tabindex="1" checked = "checked"/>Search engine
+      			   tabindex="1" checked = "checked"/>&nbsp; Search engine &nbsp;&nbsp;&nbsp;
       		<input type="radio" id="heardFrom2" name="heardFrom" value="Word of Mouth"
-      			   tabindex="-1"/>Word of mouth
+      			   tabindex="-1"/>&nbsp; Word of mouth &nbsp;&nbsp;&nbsp;
       		<input type=radio id="heardFrom3" name="heardFrom" value="Other"
-      			   tabindex="-1" />Other
+      			   tabindex="-1" />&nbsp; Other &nbsp;&nbsp;&nbsp;
       	</p>
 
         <p>Would you like to receive announcements about discounts on repairs and other news?</p>
@@ -178,10 +182,12 @@
       		<b>YES</b>, I'd like to receive information about discounts on repairs and other news.
       	</p>
 
-        <br><br><br>
+        <br>
 
         <!-- This submit the form to the server once we have a script enabled. -->
-        <input type="button" name="scheduleButton" value="Schedule It" onClick="doSubmit()" >
+        <input type="button" name="scheduleButton" value="Schedule It" onclick="validate()"> <br><br>
+
+        <input type="button" name="clearButton" value="Clear Form" onclick="resetForm()">
 
     </form>
 
