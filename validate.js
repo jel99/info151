@@ -39,10 +39,10 @@ function validate() {
       "Confirm your details: \n\n" +
       "Name:  " + fname + " " + lname + "\n" +
       "Email:  " + email + "\n" +
-      "Phone:  " + phone + "\n" +
-      "Address:  " + address + " " + city + " " + state + "\n" +
-      "Appointment Time:  " + month + " " + day + " at " + time + "\n" +
-      "Type of device:  " + deviceHelp + "\n" +
+      "Phone:  " + phone + "\n\n" +
+      "Address:  " + address + " " + city + " " + state + "\n\n" +
+      "Appointment Time:  " + month + " " + day + " at " + time + "\n\n" +
+      "Type of device:  " + deviceHelp + "\n\n" +
       "How you heard about us:  " + heardFrom + "\n" +
       "Opt in to emails:  " + wantsUpdates
     );
