@@ -5,19 +5,18 @@
     <meta charset="utf-8">
     <title>Laptop Appointment</title>
     <link href="pearrepairs.css" rel="stylesheet" type="text/css"></link>
+    <script type="text/javascript" src="validate.js"></script>
   </head>
 
   <body>
 
-    <script type="text/javascript" src="validate.js"></script>
     <a href="home.html">Go back to home page</a>
 
     <!-- This form will allow users to sign up for a laptop repair appointment. -->
-    <form name="laptopApptForm">
-
       <h1 style="text-align: center;">Please sign up for an appointment to get a laptop repaired</h1>
       <center><img src="images/laptop.png" alt="Laptop" height="125"></center>
 
+    <form name="laptopApptForm" id="laptopApptForm">
       <!-- This is just to find out what customers need help with. -->
       <p> What model of device do you need help with? &nbsp;&nbsp;
         <input type="radio" id="device1" name="deviceHelp" value="Dell"
@@ -34,9 +33,9 @@
              tabindex="-1" />&nbsp; Other
       </p>
 
-      <!-- This will allow users to select enter their name, email, and phone number to be saved by the form. -->
+      <!-- This will allow users to select enter their name, email, address, and phone number to be saved by the form. -->
       <h2>Enter your name, address, e-mail, and phone number.</h2>
-        *&nbsp;First Name:&nbsp;<input type="text" name="fname" value="" size="25">&nbsp;&nbsp;
+        *&nbsp;First Name:&nbsp;<input type="text" id="fname" name="fname" value="" size="25">&nbsp;&nbsp;
         *&nbsp;Last Name:&nbsp;<input type="text" name="lname" value="" size="25"><br><br>
 
         *&nbsp;Address:&nbsp;<input type="text" name="address" value="" size="35">&nbsp;&nbsp;
@@ -167,6 +166,7 @@
 
         <h2>Some more info we need</h2>
 
+        <!-- This is just to get some additional information about the user -->
         <p> How did you hear about us? &nbsp;&nbsp;
       		<input type="radio" id="heardFrom1" name="heardFrom" value="Search Engine"
       			   tabindex="1" checked = "checked"/>&nbsp; Search engine &nbsp;&nbsp;&nbsp;
@@ -184,8 +184,8 @@
 
         <br>
 
-        <!-- This submit the form to the server once we have a script enabled. -->
-        <input type="button" name="scheduleButton" value="Schedule It" onclick="validate()"> <br><br>
+        <!-- This submits the form to the server, and validates the form. -->
+        <input type="button" id="schedule" value="Schedule It" onclick="validate()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <input type="button" name="clearButton" value="Clear Form" onclick="resetForm()">
 

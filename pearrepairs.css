@@ -5,3 +5,21 @@ body{
 h1{
   color: darkgreen;
 }
+
+input[type="button"]{
+  background-color: #F5FFF5;
+  border-color: darkgreen;
+  color: darkgreen;
+  font-size: 16px;
+  height: 50px;
+  width: 150px;
+}
+
+#schedule{
+  font-weight: bold;
+}
+
+input[type="button"]:hover{
+  background-color: darkgreen;
+  color: #F5FFF5;
+}
