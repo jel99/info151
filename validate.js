@@ -40,7 +40,7 @@ function validate() {
       "Name:  " + fname + " " + lname + "\n" +
       "Email:  " + email + "\n" +
       "Phone:  " + phone + "\n\n" +
-      "Address:  " + address + " " + city + " " + state + "\n\n" +
+      "Address:  " + address + ", " + city + ", " + state + "\n\n" +
       "Appointment Time:  " + month + " " + day + " at " + time + "\n\n" +
       "Type of device:  " + deviceHelp + "\n\n" +
       "How you heard about us:  " + heardFrom + "\n" +
