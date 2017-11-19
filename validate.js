@@ -26,12 +26,63 @@ function validate() {
     var wantsUpdates = "No";
   }
 
+  //Checking to see how many digits are in Phone string
+  var iCount = 0;
+  for (iIndex in phone) {
+      if (!isNaN(parseInt(phone[iIndex]))) {
+          iCount++;
+      }
+  }
+  var phoneAmt = iCount;
+
+  //Checking to see if Phone matches correct formatting and length
+  var phoneCheck = false;
+  if (phoneAmt == 10)
+  {
+    if (phone.substring(3) == "-" && phone.substring(7) == "-")
+      phoneCheck = true;
+    else if (phone.indexOf("(") == 0 && phone.indexOf(")") == 4)
+      phoneCheck = true;
+    else if (phone.substring(0) == "(" && phone.substring(4) == ")" && phone.substring(8) == "-")
+      phoneCheck = true;
+    else if (phoneAmt == 10)
+      phoneCheck = true;
+    else
+      phoneCheck = false;
+  }
+  else
+    phoneCheck = false;
+
+  //Checking to see if Email matches correct formatting
+  var emailCheck = false;
+
+  if (email.substring(0) != "@" && email.substring(email.length) != "@")
+  {
+    if (email.indexOf("@") != -1 && email.indexOf(".") != -1)
+    {
+      if (email.indexOf(".") == email.length-4 || (email.indexOf(".") == email.length-5))
+        emailCheck = true;
+      else
+        emailCheck = false;
+    }
+  }
+  else
+    emailCheck = false;
+
+
   //Checking to see if any field is blank,
   //or if a drop-down that must have an option chosen is selected.
+
   if(fname == "" || lname == "" || email == "" || phone == "" || address == "" || state == "select" || phone == "")
-  {
     alert("Please fill in all required (*) fields completely.");
+  else if (phoneCheck == false)
+  {
+    alert("Please fill in the phone field correctly.");
+    if (emailCheck == false)
+      alert("Please fill in the email field correctly.");
   }
+  else if (emailCheck == false)
+    alert("Please fill in the email field correctly.");
   else
   {
     //Output the user's details for their review
