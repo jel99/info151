@@ -33,19 +33,34 @@ function validate() {
           iCount++;
       }
   }
-  var phoneAmt = iCount;
+  var phoneDigits = iCount;
+
+  var phoneArray = phone.split("");
+
+  var phoneNumCheck = true;
+  var phoneCharAmt = 0;
+
+  for (var i = 0; i < phone.length; i++) {
+    if (isNaN(phoneArray[i])) {
+      phoneNumCheck = false;
+      phoneCharAmt++;
+    }
+  }
+
+  //alert(phoneCharAmt);
 
   //Checking to see if Phone matches correct formatting and length
   var phoneCheck = false;
-  if (phoneAmt == 10)
+
+  if (phoneDigits == 10)
   {
-    if (phone.substring(3) == "-" && phone.substring(7) == "-")
+    if (phone.substring(3,4) == "-" && phone.substring(7,8) == "-" && phoneCharAmt == 2)
       phoneCheck = true;
-    else if (phone.indexOf("(") == 0 && phone.indexOf(")") == 4)
+    else if (phone.indexOf("(") == 0 && phone.indexOf(")") == 4 && phoneCharAmt == 2)
       phoneCheck = true;
-    else if (phone.substring(0) == "(" && phone.substring(4) == ")" && phone.substring(8) == "-")
+    else if (phone.substring(0,1) == "(" && phone.substring(4,5) == ")" && phone.substring(8,9) == "-" && phoneCharAmt == 3)
       phoneCheck = true;
-    else if (phoneAmt == 10)
+    else if (phoneCharAmt == 0)
       phoneCheck = true;
     else
       phoneCheck = false;
@@ -53,18 +68,31 @@ function validate() {
   else
     phoneCheck = false;
 
-  //Checking to see if Email matches correct formatting
+//Checking to see if Email matches correct formatting: name@url.domain
   var emailCheck = false;
 
-  if (email.substring(0) != "@" && email.substring(email.length) != "@")
+  var emailAt = 0;
+  for (var i = 0; i < email.length; i++) {
+    if(email.substring(i,i+1) == "@")
+    {
+      emailAt++;
+    }
+  }
+
+  //Check for @ and . not at beginning or end, and no more than 1 @
+  if (email.substring(0,1) != "@" && email.substring(email.length-1,email.length) != "@" && email.substring(0,1) != "." && email.substring(email.length-1,email.length) != "." && emailAt == 1)
   {
+    //Make sure email contains a @ and .
     if (email.indexOf("@") != -1 && email.indexOf(".") != -1)
     {
-      if (email.indexOf(".") == email.length-4 || (email.indexOf(".") == email.length-5))
+      //Make sure . is in 3rd from last or 4th from last position
+      if (email.indexOf(".") == (email.length-4) || (email.indexOf(".") == (email.length-5)))
         emailCheck = true;
       else
         emailCheck = false;
     }
+    else
+      emailCheck = false;
   }
   else
     emailCheck = false;
@@ -78,11 +106,17 @@ function validate() {
   else if (phoneCheck == false)
   {
     alert("Please fill in the phone field correctly.");
-    if (emailCheck == false)
+    document.forms["laptopApptForm"]["phone"].focus();
+    if (emailCheck == false){
       alert("Please fill in the email field correctly.");
+      document.forms["laptopApptForm"]["email"].focus();
+    }
   }
   else if (emailCheck == false)
+  {
     alert("Please fill in the email field correctly.");
+    document.forms["laptopApptForm"]["email"].focus();
+  }
   else
   {
     //Output the user's details for their review
@@ -99,13 +133,13 @@ function validate() {
     );
 
     //Thank them for scheduling
-    alert(
+    /*alert(
       "Thanks for scheduling an appointment! \n" +
       "Please click OK to go back to home page."
-    );
+    );*/
 
     //Go back to home page
-    window.location.href = "home.html";
+    //window.location.href = "home.html";
   }
 }
 
