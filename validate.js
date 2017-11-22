@@ -37,29 +37,30 @@ function validate() {
 
   var phoneArray = phone.split("");
 
-  var phoneNumCheck = true;
   var phoneCharAmt = 0;
 
   for (var i = 0; i < phone.length; i++) {
-    if (isNaN(phoneArray[i])) {
-      phoneNumCheck = false;
+    if (isNaN(phone.substring(i,i+1))) {
       phoneCharAmt++;
     }
   }
 
-  //alert(phoneCharAmt);
-
-  //Checking to see if Phone matches correct formatting and length
+//Checking to see if Phone matches correct formatting and length
   var phoneCheck = false;
 
+  //Make sure number of digits is 10
   if (phoneDigits == 10)
   {
+    //Check for 000-000-0000 formatting
     if (phone.substring(3,4) == "-" && phone.substring(7,8) == "-" && phoneCharAmt == 2)
       phoneCheck = true;
+    //Check for (000)0000000 formatting
     else if (phone.indexOf("(") == 0 && phone.indexOf(")") == 4 && phoneCharAmt == 2)
       phoneCheck = true;
+    //Check for (000)000-0000 formatting
     else if (phone.substring(0,1) == "(" && phone.substring(4,5) == ")" && phone.substring(8,9) == "-" && phoneCharAmt == 3)
       phoneCheck = true;
+    //Check for 0000000000 formatting
     else if (phoneCharAmt == 0)
       phoneCheck = true;
     else
@@ -68,7 +69,7 @@ function validate() {
   else
     phoneCheck = false;
 
-//Checking to see if Email matches correct formatting: name@url.domain
+  //Getting number of @ in email for later
   var emailCheck = false;
 
   var emailAt = 0;
@@ -78,6 +79,8 @@ function validate() {
       emailAt++;
     }
   }
+
+//Checking to see if Email matches correct formatting: name@url.domain
 
   //Check for @ and . not at beginning or end, and no more than 1 @
   if (email.substring(0,1) != "@" && email.substring(email.length-1,email.length) != "@" && email.substring(0,1) != "." && email.substring(email.length-1,email.length) != "." && emailAt == 1)
