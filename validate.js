@@ -89,7 +89,7 @@ function validate() {
     if (email.indexOf("@") != -1 && email.indexOf(".") != -1)
     {
       //Make sure . is in 3rd from last or 4th from last position
-      if (email.indexOf(".") == (email.length-4) || (email.indexOf(".") == (email.length-5)))
+      if (email.indexOf(".") == (email.length-4) || (email.indexOf(".") == (email.length-3)))
         emailCheck = true;
       else
         emailCheck = false;
