@@ -136,13 +136,13 @@ function validate() {
     );
 
     //Thank them for scheduling
-    /*alert(
+    alert(
       "Thanks for scheduling an appointment! \n" +
       "Please click OK to go back to home page."
-    );*/
+    );
 
     //Go back to home page
-    //window.location.href = "home.html";
+    window.location.href = "home.html";
   }
 }
 
